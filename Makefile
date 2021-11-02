@@ -21,6 +21,12 @@ init: ## 初期設定
 	docker compose exec app php artisan key:generate
 	docker compose exec app composer require intervention/image
 	docker compose exec app php artisan storage:link
+	docker compose exec app composer require pusher/pusher-php-server
+	docker compose exec appcomposer require laravel/ui
+	docker compose exec app npm install --save laravel-echo pusher-js
+	npm install
+	npm install query —save
+	npm run dev
 	@make migrate
 	@make fresh
 remake: ## 環境の再設定
